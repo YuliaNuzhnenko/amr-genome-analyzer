@@ -31,74 +31,113 @@ from project import generate_demo_data, find_resistance_genes, parse_subject
 # ── Custom CSS ───────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 html, body, [class*="css"] {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', sans-serif !important;
 }
 
-/* Dark gradient header */
+/* Glassmorphism Header */
 .main-header {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    padding: 2rem 2.5rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 3rem;
+    border-radius: 24px;
+    margin-bottom: 2.5rem;
     color: white;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
 }
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 60%);
+    z-index: 0;
+}
+.main-header > * { position: relative; z-index: 1; }
+
 .main-header h1 {
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     font-weight: 700;
     margin: 0;
-    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -1px;
 }
 .main-header p {
-    font-size: 1rem;
-    opacity: 0.8;
-    margin: 0.4rem 0 0 0;
+    font-size: 1.15rem;
+    color: #94a3b8;
+    font-weight: 400;
+    margin: 0.5rem 0 1rem 0;
 }
 .badge {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.2);
     border-radius: 20px;
-    padding: 3px 12px;
+    padding: 4px 14px;
     font-size: 0.75rem;
+    font-weight: 500;
     margin-top: 0.6rem;
-    margin-right: 0.4rem;
+    margin-right: 0.5rem;
+    color: #38bdf8;
+    backdrop-filter: blur(4px);
 }
 
-/* Metric cards */
+/* Premium Metric Cards */
 .metric-card {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
+    border-radius: 16px;
+    padding: 1.5rem;
     text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
 }
 .metric-card .value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1e293b;
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 .metric-card .label {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: #64748b;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
 }
 
-/* Gene table styling */
-.gene-table { border-radius: 8px; overflow: hidden; }
-
-/* Info box */
+/* Info box upgrade */
 .info-box {
-    background: #eff6ff;
+    background: linear-gradient(to right, #eff6ff, #ffffff);
     border-left: 4px solid #3b82f6;
-    padding: 0.8rem 1rem;
-    border-radius: 0 8px 8px 0;
-    font-size: 0.9rem;
-    color: #1e40af;
-    margin-bottom: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1e3a8a;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Sidebar button hover */
+.sidebar-btn {
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
+.sidebar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(59, 130, 246, 0.25);
 }
 </style>
 """, unsafe_allow_html=True)
@@ -122,19 +161,19 @@ with st.sidebar:
     st.markdown("### ⚙️ Analysis Settings")
 
     st.markdown("""
-    <div style="background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3b82f6;">
-        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.1rem;">🤝 Contact & Collaboration</h4>
-        <p style="font-size: 0.85rem; color: #334155; line-height: 1.4;">
-            This is a demo version. For detailed real-world analysis, custom pipelines, or collaboration inquiries, please reach out to me!
+    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 20px; border-radius: 16px; margin-bottom: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
+        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.15rem; font-weight: 700;">🤝 Contact & Collab</h4>
+        <p style="font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 15px;">
+            This is a portfolio demo. For detailed real-world analysis, custom bioinformatics pipelines, or freelance inquiries, reach out below.
         </p>
         <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
-            <div style="background-color: #2563eb; color: white; padding: 8px 10px; border-radius: 6px; text-align: center; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.2s;">
-                📧 Email Me
+            <div class="sidebar-btn" style="background: linear-gradient(to right, #2563eb, #3b82f6); color: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 10px; font-weight: 600; font-size: 0.9rem;">
+                📧 Send Email
             </div>
         </a>
         <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
-            <div style="background-color: #1e293b; color: white; padding: 8px 10px; border-radius: 6px; text-align: center; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.2s;">
-                🐙 GitHub Portfolio
+            <div class="sidebar-btn" style="background: #0f172a; color: white; padding: 10px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 0.9rem;">
+                🐙 View GitHub
             </div>
         </a>
     </div>
