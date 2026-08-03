@@ -6,7 +6,7 @@
 
 **🌟 Live Demo:** [AMR Genome Analyzer on Streamlit](https://amr-genome-analyzer.streamlit.app/)
 
-#### Video Demo: [To be added]
+
 
 ---
 
