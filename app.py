@@ -282,25 +282,34 @@ def make_chart(hits, top_n):
 
 # ── Welcome state (before analysis) ─────────────────────────────────────────
 if not run_button:
-    col1, col2, col3 = st.columns(3)
-    with col1:
+    tab1, tab2, tab3 = st.tabs(["🔬 NCBI Entrez Integration", "🧬 BLAST + CARD Database", "📊 Publication-Ready Charts"])
+
+    with tab1:
         st.markdown("""
-        <div class="metric-card">
-            <div class="value">🔬</div>
-            <div class="label">NCBI Entrez Integration</div>
-        </div>""", unsafe_allow_html=True)
-    with col2:
+        ### 🧬 Automated NCBI Retrieval
+        This tool integrates with the **NCBI Entrez API** via `Biopython` to seamlessly fetch complete bacterial genomes using just their Accession Number (e.g., `NC_007795.1`).
+        - Automatically downloads and parses `.gb` (GenBank) or `.fasta` files.
+        - Gracefully handles network timeouts and API rate-limiting.
+        - Built for high-throughput genomic data processing.
+        """)
+        
+    with tab2:
         st.markdown("""
-        <div class="metric-card">
-            <div class="value">🧬</div>
-            <div class="label">BLAST + CARD Database</div>
-        </div>""", unsafe_allow_html=True)
-    with col3:
+        ### 🦠 Resistance Gene Profiling
+        Utilizes the **Comprehensive Antibiotic Resistance Database (CARD)** as a golden reference for AMR genes.
+        - Parses raw **BLASTn** alignment data (`-outfmt 6` tabular format) using `Pandas`.
+        - Dynamically filters sequences based on custom identity and coverage thresholds.
+        - Automatically maps genes to their specific antibiotic classes (e.g., beta-lactams, tetracyclines).
+        """)
+        
+    with tab3:
         st.markdown("""
-        <div class="metric-card">
-            <div class="value">📊</div>
-            <div class="label">Publication-Ready Charts</div>
-        </div>""", unsafe_allow_html=True)
+        ### 📊 Data Visualization
+        Generates clean, professional, publication-ready figures using `Matplotlib`.
+        - **Color-coded** by antibiotic class for immediate visual interpretation.
+        - Dynamically labels complex gene variants and resistance mechanisms.
+        - Results can be exported as high-resolution PNGs or raw CSV tables for downstream analysis.
+        """)
 
     st.markdown("---")
     st.markdown("""
