@@ -4,7 +4,7 @@
 > Final project for [CS50's Introduction to Programming with Python (CS50P)](https://cs50.harvard.edu/python/)  
 > Early prototype of **VetAMR Scan** — a veterinary bioinformatics tool
 
-#### Video Demo: [To be added]
+
 
 ---
 
