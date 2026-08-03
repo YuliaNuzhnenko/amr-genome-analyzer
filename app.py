@@ -121,29 +121,27 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### ⚙️ Analysis Settings")
 
-    mode = st.radio(
-        "Mode",
-        ["🎭 Demo (simulated data)", "🔬 Real genome (NCBI)"],
-        help="Demo mode uses realistic simulated S. aureus data. No internet needed."
-    )
+    st.markdown("""
+    <div style="background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3b82f6;">
+        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.1rem;">💼 Hire Me For Analysis</h4>
+        <p style="font-size: 0.85rem; color: #334155; line-height: 1.4;">
+            This is a demo version with simulated data. Need real genomic analysis, BLAST alignments, or custom pipelines? Let's work together!
+        </p>
+        <a href="mailto:nuznenkou@gmail.com" target="_blank" style="text-decoration: none;">
+            <div style="background-color: #2563eb; color: white; padding: 8px 10px; border-radius: 6px; text-align: center; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.2s;">
+                📧 Email Me
+            </div>
+        </a>
+        <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
+            <div style="background-color: #1e293b; color: white; padding: 8px 10px; border-radius: 6px; text-align: center; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.2s;">
+                🐙 GitHub Portfolio
+            </div>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    mode = "Demo"
 
-    st.markdown("---")
-
-    if "Real genome" in mode:
-        accession = st.text_input(
-            "NCBI Accession Number",
-            value="NC_007795.1",
-            help="Example: NC_007795.1 (S. aureus NCTC 8325)"
-        )
-        ncbi_email = st.text_input(
-            "Your Email (for NCBI)",
-            value=os.getenv("NCBI_EMAIL", ""),
-            help="NCBI requires a valid email for API access",
-            type="default"
-        )
-    else:
-        accession = "NC_007795.1"
-        ncbi_email = ""
 
     st.markdown("---")
     min_identity = st.slider(
@@ -272,10 +270,9 @@ if not run_button:
 
     with st.expander("📖 How to use this tool"):
         st.markdown("""
-        1. **Demo mode** — instant results with realistic simulated *S. aureus* data (no BLAST or NCBI needed)
-        2. **Real genome mode** — enter an NCBI accession number and your email, then upload a BLAST `.tsv` file
-        3. Adjust **identity threshold** (70% recommended) and **top N genes** to display
-        4. Click **Run Analysis** → view chart, table, and download results
+        1. **Demo version** — click 'Run Analysis' to see instant results with realistic simulated *S. aureus* data.
+        2. **Real genome analysis** is available as a professional service. Contact me to analyze your own `.gb`, `.fasta`, or raw sequence files.
+        3. Adjust **identity threshold** and **top N genes** to see how the chart dynamically updates.
 
         **Antibiotic class color legend:**
         """)
