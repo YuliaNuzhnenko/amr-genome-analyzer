@@ -173,7 +173,13 @@ st.markdown("""
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/US-NLM-NCBI-Logo.svg/200px-US-NLM-NCBI-Logo.svg.png", width=120)
+    st.markdown("""
+    <div style='background: rgba(10, 15, 30, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding:20px; border-radius:16px; margin-bottom:20px; border:1px solid rgba(56, 189, 248, 0.2); text-align: center; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);'>
+        <p style='font-size:0.85rem; color:#94a3b8; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;'>Powered by</p>
+        <a href="https://forneus.io/" target="_blank" style="display: block; font-size: 1.3rem; color: #ffffff; text-decoration: none; font-weight: 700; margin-bottom: 15px; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">FORNEUS<br><span style="font-size: 0.9rem; color: #38bdf8; font-weight: 500;">TECHNOLOGIES</span></a>
+        <p style='font-size:0.9rem; color:#e2e8f0; margin-top: 15px; margin-bottom: 0;'><span style='color: #38bdf8;'>✉️</span> ghost.ceo@crypto-shark.pro</p>
+    </div>
+    """, unsafe_allow_html=True)
     st.markdown("---")
     st.markdown("### ⚙️ Analysis Settings")
 
