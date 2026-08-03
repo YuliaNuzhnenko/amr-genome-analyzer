@@ -160,7 +160,6 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("### ⚙️ Analysis Settings")
 
-    st.markdown("""
     mode = st.radio(
         "Mode",
         ["🎭 Demo (simulated data)", "🔬 Real genome (NCBI)"],
