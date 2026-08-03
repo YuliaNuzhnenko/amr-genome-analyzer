@@ -336,13 +336,14 @@ else:
             else:
                 st.markdown("""
                 <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 40px; border-radius: 20px; margin-top: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 10px;">🚀</div>
-                    <h2 style="color: #0f172a; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Ready to Analyze Real Genomes?</h2>
-                    <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; max-width: 600px; margin: 0 auto 25px auto;">
-                        Real-world genomic analysis, BLAST alignments, and custom AMR profiling require dedicated computational resources and professional bioinformatics pipelines.
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🔬</div>
+                    <h2 style="color: #0f172a; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Need Real Genomic Analysis?</h2>
+                    <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
+                        This web app is a <b>limited demonstration</b> to showcase my bioinformatics capabilities.<br>
+                        If you need professional AMR profiling for real genomes, raw sequence processing, or custom bioinformatics pipelines, I provide these services on a freelance basis.
                     </p>
-                    <p style="font-size: 1.1rem; color: #0f172a; margin-bottom: 30px; font-weight: 600;">
-                        Let's collaborate on your project!
+                    <p style="font-size: 1.2rem; color: #0f172a; margin-bottom: 30px; font-weight: 700;">
+                        Hire me to analyze your data!
                     </p>
                     <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
                         <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
