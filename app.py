@@ -339,21 +339,31 @@ else:
                     <div style="font-size: 3rem; margin-bottom: 10px;">🔬</div>
                     <h2 style="color: #0f172a; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Need Real Genomic Analysis?</h2>
                     <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
-                        This web app is a <b>limited demonstration</b> to showcase my bioinformatics capabilities.<br>
-                        If you need professional AMR profiling for real genomes, raw sequence processing, or custom bioinformatics pipelines, I provide these services on a freelance basis.
+                        This web application is provided as a functional demonstration of the tool.<br>
+                        For comprehensive, real-world AMR profiling, raw genomic data processing, or custom bioinformatics solutions, please contact me directly. I am available to personally handle your analysis requirements.
                     </p>
                     <p style="font-size: 1.2rem; color: #0f172a; margin-bottom: 30px; font-weight: 700;">
-                        Hire me to analyze your data!
+                        Let's discuss your project:
                     </p>
                     <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://www.linkedin.com/in/juliia-nuzhnenko-954340251?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: #0077b5; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                                💼 LinkedIn
+                            </div>
+                        </a>
+                        <a href="https://www.kolabtree.com/profile" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                                🧬 Kolabtree
+                            </div>
+                        </a>
                         <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
-                            <div class="sidebar-btn" style="background: linear-gradient(to right, #2563eb, #3b82f6); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
-                                📧 Contact via Email
+                            <div class="sidebar-btn" style="background: #ea4335; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                                📧 Email
                             </div>
                         </a>
                         <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
                             <div class="sidebar-btn" style="background: #0f172a; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
-                                🐙 View GitHub Profile
+                                🐙 GitHub
                             </div>
                         </a>
                     </div>
