@@ -353,35 +353,30 @@ else:
                 hits = find_resistance_genes(blast_file, min_identity=min_identity)
             else:
                 st.markdown("""
-                <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 40px; border-radius: 20px; margin-top: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); text-align: center;">
+                <div style="background: rgba(10, 15, 30, 0.6); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 40px; border-radius: 20px; margin-top: 20px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 8px 32px 0 rgba(0,0,0,0.3); text-align: center;">
                     <div style="font-size: 3rem; margin-bottom: 10px;">🔬</div>
-                    <h2 style="color: #0f172a; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Need Real Genomic Analysis?</h2>
-                    <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
+                    <h2 style="color: #ffffff; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Need Real Genomic Analysis?</h2>
+                    <p style="font-size: 1.1rem; color: #cbd5e1; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
                         This web application is provided as a functional demonstration of the tool.<br>
                         For comprehensive, real-world AMR profiling, raw genomic data processing, or custom bioinformatics solutions, please contact me directly. I am available to personally handle your analysis requirements.
                     </p>
-                    <p style="font-size: 1.2rem; color: #0f172a; margin-bottom: 30px; font-weight: 700;">
+                    <p style="font-size: 1.2rem; color: #ffffff; margin-bottom: 30px; font-weight: 700;">
                         Let's discuss your project:
                     </p>
                     <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://forneus.io/" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: #1e293b; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 1px solid #38bdf8;">
+                                🏢 Forneus Website
+                            </div>
+                        </a>
+                        <a href="mailto:ghost.ceo@crypto-shark.pro" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: #ea4335; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 1px solid #ea4335;">
+                                📧 Corporate Email
+                            </div>
+                        </a>
                         <a href="https://www.linkedin.com/in/juliia-nuzhnenko-954340251?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="text-decoration: none;">
-                            <div class="sidebar-btn" style="background: #0077b5; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                            <div class="sidebar-btn" style="background: #0077b5; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 1px solid #0077b5;">
                                 💼 LinkedIn
-                            </div>
-                        </a>
-                        <a href="https://www.kolabtree.com/profile" target="_blank" style="text-decoration: none;">
-                            <div class="sidebar-btn" style="background: #2563eb; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
-                                🧬 Kolabtree
-                            </div>
-                        </a>
-                        <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
-                            <div class="sidebar-btn" style="background: #ea4335; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
-                                📧 Email
-                            </div>
-                        </a>
-                        <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
-                            <div class="sidebar-btn" style="background: #0f172a; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
-                                🐙 GitHub
                             </div>
                         </a>
                     </div>
