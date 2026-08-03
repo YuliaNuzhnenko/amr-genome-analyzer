@@ -37,23 +37,23 @@ st.set_page_config(
 from project import generate_demo_data, find_resistance_genes, parse_subject
 
 # ── Custom CSS ───────────────────────────────────────────────────────────────
-st.markdown(f"""
+st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-html, body, [class*="css"] {{
+html, body, [class*="css"] {
     font-family: 'Outfit', sans-serif !important;
-}}
+}
 
-.stApp {{
-    background-image: url("data:image/png;base64,{bg_b64}");
+.stApp {
+    background-image: url("data:image/png;base64,""" + bg_b64 + """");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}}
+}
 
 /* Glassmorphism Header */
-.main-header {{
+.main-header {
     background: rgba(10, 15, 30, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -64,7 +64,7 @@ html, body, [class*="css"] {{
     color: white;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
     text-align: center;
-}}
+}
 
 .main-header h1 {
     font-size: 3.2rem;
