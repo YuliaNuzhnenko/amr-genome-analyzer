@@ -52,6 +52,14 @@ html, body, [class*="css"] {
     background-attachment: fixed;
 }
 
+/* Custom Sidebar */
+[data-testid="stSidebar"] {
+    background: rgba(10, 15, 30, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-right: 1px solid rgba(56, 189, 248, 0.15);
+}
+
 /* Glassmorphism Header */
 .main-header {
     background: rgba(10, 15, 30, 0.6);
