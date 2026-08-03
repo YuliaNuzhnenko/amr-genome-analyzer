@@ -123,11 +123,11 @@ with st.sidebar:
 
     st.markdown("""
     <div style="background-color: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #3b82f6;">
-        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.1rem;">💼 Hire Me For Analysis</h4>
+        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.1rem;">🤝 Contact & Collaboration</h4>
         <p style="font-size: 0.85rem; color: #334155; line-height: 1.4;">
-            This is a demo version with simulated data. Need real genomic analysis, BLAST alignments, or custom pipelines? Let's work together!
+            This is a demo version. For detailed real-world analysis, custom pipelines, or collaboration inquiries, please reach out to me!
         </p>
-        <a href="mailto:nuznenkou@gmail.com" target="_blank" style="text-decoration: none;">
+        <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
             <div style="background-color: #2563eb; color: white; padding: 8px 10px; border-radius: 6px; text-align: center; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; transition: 0.2s;">
                 📧 Email Me
             </div>
