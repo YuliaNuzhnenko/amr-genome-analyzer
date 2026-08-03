@@ -358,7 +358,7 @@ else:
                     <h2 style="color: #ffffff; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Need Real Genomic Analysis?</h2>
                     <p style="font-size: 1.1rem; color: #cbd5e1; line-height: 1.6; max-width: 650px; margin: 0 auto 25px auto;">
                         This web application is provided as a functional demonstration of the tool.<br>
-                        For comprehensive, real-world AMR profiling, raw genomic data processing, or custom bioinformatics solutions, please contact me directly. I am available to personally handle your analysis requirements.
+                        For comprehensive, real-world AMR profiling, raw genomic data processing, or custom bioinformatics solutions, please contact us directly. We are ready to handle your analytical tasks.
                     </p>
                     <p style="font-size: 1.2rem; color: #ffffff; margin-bottom: 30px; font-weight: 700;">
                         Let's discuss your project:
