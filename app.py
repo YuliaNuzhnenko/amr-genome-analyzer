@@ -161,25 +161,29 @@ with st.sidebar:
     st.markdown("### ⚙️ Analysis Settings")
 
     st.markdown("""
-    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 20px; border-radius: 16px; margin-bottom: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
-        <h4 style="margin-top: 0; color: #0f172a; font-size: 1.15rem; font-weight: 700;">🤝 Contact & Collab</h4>
-        <p style="font-size: 0.85rem; color: #475569; line-height: 1.5; margin-bottom: 15px;">
-            This is a portfolio demo. For detailed real-world analysis, custom bioinformatics pipelines, or freelance inquiries, reach out below.
-        </p>
-        <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
-            <div class="sidebar-btn" style="background: linear-gradient(to right, #2563eb, #3b82f6); color: white; padding: 10px; border-radius: 8px; text-align: center; margin-bottom: 10px; font-weight: 600; font-size: 0.9rem;">
-                📧 Send Email
-            </div>
-        </a>
-        <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
-            <div class="sidebar-btn" style="background: #0f172a; color: white; padding: 10px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 0.9rem;">
-                🐙 View GitHub
-            </div>
-        </a>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    mode = "Demo"
+    mode = st.radio(
+        "Mode",
+        ["🎭 Demo (simulated data)", "🔬 Real genome (NCBI)"],
+        help="Demo mode uses simulated data. Real mode requires professional setup."
+    )
+
+    st.markdown("---")
+
+    if "Real genome" in mode:
+        accession = st.text_input(
+            "NCBI Accession Number",
+            value="NC_007795.1",
+            help="Example: NC_007795.1 (S. aureus NCTC 8325)"
+        )
+        ncbi_email = st.text_input(
+            "Your Email (for NCBI)",
+            value="",
+            help="NCBI requires a valid email for API access",
+            type="default"
+        )
+    else:
+        accession = "NC_007795.1"
+        ncbi_email = ""
 
 
     st.markdown("---")
@@ -329,20 +333,33 @@ else:
         try:
             if "Demo" in mode:
                 generate_demo_data(output_dir="results")
+                hits = find_resistance_genes(blast_file, min_identity=min_identity)
             else:
-                # In real mode, require BLAST file to already exist
-                from Bio import Entrez
-                if ncbi_email:
-                    Entrez.email = ncbi_email
-                if not os.path.exists(blast_file):
-                    st.error(
-                        "BLAST results file not found at `results/blast_hits.tsv`.\n\n"
-                        "Please run BLAST locally and place the `-outfmt 6` output file there, "
-                        "or switch to **Demo mode** for instant results."
-                    )
-                    st.stop()
-
-            hits = find_resistance_genes(blast_file, min_identity=min_identity)
+                st.markdown("""
+                <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 40px; border-radius: 20px; margin-top: 20px; border: 1px solid #e2e8f0; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); text-align: center;">
+                    <div style="font-size: 3rem; margin-bottom: 10px;">🚀</div>
+                    <h2 style="color: #0f172a; font-weight: 700; margin-bottom: 15px; font-family: 'Outfit', sans-serif;">Ready to Analyze Real Genomes?</h2>
+                    <p style="font-size: 1.1rem; color: #475569; line-height: 1.6; max-width: 600px; margin: 0 auto 25px auto;">
+                        Real-world genomic analysis, BLAST alignments, and custom AMR profiling require dedicated computational resources and professional bioinformatics pipelines.
+                    </p>
+                    <p style="font-size: 1.1rem; color: #0f172a; margin-bottom: 30px; font-weight: 600;">
+                        Let's collaborate on your project!
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                        <a href="mailto:yuliannanuzhnenko@gmail.com" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: linear-gradient(to right, #2563eb, #3b82f6); color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                                📧 Contact via Email
+                            </div>
+                        </a>
+                        <a href="https://github.com/YuliaNuzhnenko" target="_blank" style="text-decoration: none;">
+                            <div class="sidebar-btn" style="background: #0f172a; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem;">
+                                🐙 View GitHub Profile
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+                st.stop()
 
         except FileNotFoundError as e:
             st.error(f"File error: {e}")
