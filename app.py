@@ -12,7 +12,15 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import io
 import os
+import base64
 from dotenv import load_dotenv
+
+def get_base64_of_bin_file(bin_file):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+bg_b64 = get_base64_of_bin_file("bg.png")
 
 # ── Load environment ─────────────────────────────────────────────────────────
 load_dotenv()
@@ -29,17 +37,24 @@ st.set_page_config(
 from project import generate_demo_data, find_resistance_genes, parse_subject
 
 # ── Custom CSS ───────────────────────────────────────────────────────────────
-st.markdown("""
+st.markdown(f"""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-html, body, [class*="css"] {
+html, body, [class*="css"] {{
     font-family: 'Outfit', sans-serif !important;
-}
+}}
+
+.stApp {{
+    background-image: url("data:image/png;base64,{bg_b64}");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}}
 
 /* Glassmorphism Header */
-.main-header {
-    background: rgba(15, 23, 42, 0.85);
+.main-header {{
+    background: rgba(10, 15, 30, 0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -47,19 +62,9 @@ html, body, [class*="css"] {
     border-radius: 24px;
     margin-bottom: 2.5rem;
     color: white;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    position: relative;
-    overflow: hidden;
-}
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 60%);
-    z-index: 0;
-}
-.main-header > * { position: relative; z-index: 1; }
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}}
 
 .main-header h1 {
     font-size: 3.2rem;
@@ -92,12 +97,14 @@ html, body, [class*="css"] {
 
 /* Premium Metric Cards */
 .metric-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
 }
 .metric-card:hover {
@@ -108,11 +115,13 @@ html, body, [class*="css"] {
 .metric-card .value {
     font-size: 2.5rem;
     line-height: 1.2;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(56,189,248,0.3);
 }
 .metric-card .label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #64748b;
+    color: #cbd5e1;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-top: 0.5rem;
