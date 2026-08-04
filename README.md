@@ -128,7 +128,7 @@ The tool generates a chart like this:
 
 ---
 
-## 💼 Future Development (VetAMR Scan)
+## 💼 Future Development 
 
 - [ ] Streamlit web interface for clinical use
 - [ ] Multi-genome batch processing
