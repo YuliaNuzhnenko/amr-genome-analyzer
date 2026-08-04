@@ -17,6 +17,10 @@
 ![Results Dashboard](2_amr_dashboard.png)
 *Automated detection of resistance mechanisms, clinical flags, and genomic coordinates.*
 
+### 📋 Detailed Resistance Genes Table
+![Resistance Genes Table](Top_Resistance_genes_Detail_Table.png)
+*Granular data view showing exact gene locations, identities, and resistance mechanisms.*
+
 ### 💡 Clinical Interpretation
 ![Clinical Interpretation](Clinical_Interpretation_summary.png)
 *Clear, actionable summaries for immediate medical or research decision-making.*
