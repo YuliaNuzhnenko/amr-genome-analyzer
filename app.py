@@ -182,7 +182,7 @@ with st.sidebar:
         <img src="data:image/png;base64,{logo_b64}" style="width: 140px; margin-bottom: 15px;">
         <p style='font-size:0.85rem; color:#94a3b8; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;'>Powered by</p>
         <a href="https://forneus.io/" target="_blank" style="display: block; font-size: 1.1rem; color: #38bdf8; text-decoration: none; font-weight: 600; margin-bottom: 15px; letter-spacing: 0.5px;">🌐 forneus.io</a>
-        <p style='font-size:0.9rem; color:#e2e8f0; margin-top: 10px; margin-bottom: 0;'><span style='color: #38bdf8;'>✉️</span> ghost.ceo@crypto-shark.pro</p>
+        <p style='font-size:0.9rem; color:#e2e8f0; margin-top: 10px; margin-bottom: 0;'><span style='color: #38bdf8;'>✉️</span> julia.n@forneus.io</p>
     </div>
     """, unsafe_allow_html=True)
     st.markdown("---")
@@ -388,7 +388,7 @@ else:
                                 🏢 Forneus Website
                             </div>
                         </a>
-                        <a href="mailto:ghost.ceo@crypto-shark.pro" target="_blank" style="text-decoration: none;">
+                        <a href="mailto:julia.n@forneus.io" target="_blank" style="text-decoration: none;">
                             <div class="sidebar-btn" style="background: #ea4335; color: white; padding: 12px 24px; border-radius: 8px; font-weight: 600; font-size: 1rem; border: 1px solid #ea4335;">
                                 📧 Corporate Email
                             </div>

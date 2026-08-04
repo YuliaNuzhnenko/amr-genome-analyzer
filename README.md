@@ -176,3 +176,12 @@ The tool generates a chart like this:
 Built as CS50P final project.  
 **Domain:** Veterinary bioinformatics / AMR genomics  
 **Platform:** Python 3.11+
+
+
+## Contact
+
+**Juliia Nuzhnenko**
+* Email: julia.n@forneus.io
+* LinkedIn: [Juliia Nuzhnenko](https://www.linkedin.com/in/juliia-nuzhnenko-954340251/)
+
+**Powered by Forneus Technologies**
