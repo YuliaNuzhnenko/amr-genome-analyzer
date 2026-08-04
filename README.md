@@ -13,9 +13,13 @@
 ![Main Interface](1_amr_main..png)
 *A sleek, glassmorphism-inspired UI designed for enterprise bioinformatics.*
 
-### 📊 Comprehensive AMR Dashboard
-![Results Dashboard](2_amr_dashboard.png)
-*Automated detection of resistance mechanisms, clinical flags, and genomic coordinates.*
+### 📊 Comprehensive AMR Dashboard & Overview
+![Results Dashboard 1](2_amr_dashboard.png)
+*Automated detection of resistance mechanisms and key genomic metrics.*
+
+### 📈 Analytics & First Results Table
+![Results Dashboard 2](3_amr_dashboard.png)
+*High-level summary of the most critical resistance findings.*
 
 ### 📋 Detailed Resistance Genes Table
 ![Resistance Genes Table](Top_Resistance_genes_Detail_Table.png)
