@@ -1,12 +1,25 @@
 # 🦠 AMR Genome Analyzer
 
 > **Automated Antimicrobial Resistance Profiler for Bacterial Genomes**  
-> Final project for [CS50's Introduction to Programming with Python (CS50P)](https://cs50.harvard.edu/python/)  
-> Early prototype of **VetAMR Scan** — a veterinary bioinformatics tool
+> Professional Bioinformatics Pipeline developed for **Forneus Technologies**
 
 **🌟 Live Demo:** [AMR Genome Analyzer on Streamlit](https://amr-genome-analyzer.streamlit.app/)
 
+---
 
+## 📸 Dashboard & Interface
+
+### 🧬 Professional Web Interface
+![Main Interface](1_amr_main..png)
+*A sleek, glassmorphism-inspired UI designed for enterprise bioinformatics.*
+
+### 📊 Comprehensive AMR Dashboard
+![Results Dashboard](2_amr_dashboard.png)
+*Automated detection of resistance mechanisms, clinical flags, and genomic coordinates.*
+
+### 💡 Clinical Interpretation
+![Clinical Interpretation](Clinical_Interpretation_summary.png)
+*Clear, actionable summaries for immediate medical or research decision-making.*
 
 ---
 
