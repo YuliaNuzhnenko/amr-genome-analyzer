@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-VetAMR Scan — Streamlit Web Interface
+AMR Genome Analyzer — Streamlit Web Interface
 Wraps the core AMR analysis functions from project.py
 into a professional, interactive web application.
 """
@@ -31,7 +31,7 @@ load_dotenv()
 
 # ── Page config (MUST be first Streamlit call) ───────────────────────────────
 st.set_page_config(
-    page_title="VetAMR Scan",
+    page_title="AMR Genome Analyzer",
     page_icon="🦠",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -166,7 +166,7 @@ html, body, [class*="css"] {
 # ── Header ───────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="main-header">
-    <h1>🦠 VetAMR Scan</h1>
+    <h1>🦠 AMR Genome Analyzer</h1>
     <p>Automated Antimicrobial Resistance Gene Profiler for Bacterial Genomes</p>
     <span class="badge">NCBI Entrez</span>
     <span class="badge">BLAST + CARD</span>
@@ -237,7 +237,7 @@ with st.sidebar:
     st.markdown("""
     <small style='color:#94a3b8'>
     Built with Python + Streamlit<br>
-    Prototype of <b>VetAMR Scan</b><br>
+    Prototype of <b>AMR Genome Analyzer</b><br>
     CS50P Final Project
     </small>
     """, unsafe_allow_html=True)
